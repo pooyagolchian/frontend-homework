@@ -1,13 +1,13 @@
 import * as actionType from "../actions";
 
 const initialState = {
-  showDropDown: false,
+  showDropdown: false,
 };
 
 const ShowDropDownReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionType.SHOW_DROPDOWN:
-      return state.showDropDown;
+      return { ...state, showDropdown: action.payload };
     default:
       return state;
   }

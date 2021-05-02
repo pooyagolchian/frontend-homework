@@ -1,2 +1,3 @@
 export const SHOW_DROPDOWN = "SHOW_DROPDOWN";
+export const SET_COMPANY = "SET_COMPANY";
 export const SELECT_COMPANY = "SELECT_COMPANY";

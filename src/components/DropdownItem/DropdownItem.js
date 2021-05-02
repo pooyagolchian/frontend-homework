@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
+import * as actionTypes from "./../../actions";
 
 const DropdownItem = (props) => {
-  console.log(props);
   return (
     <div className="nav__list">
       <div className=" nav__list__item nav__list__item--company-divider">
@@ -13,11 +13,16 @@ const DropdownItem = (props) => {
           <div className="nav__list__item__company--wrapper">
             {props.companies.map((item, index) => {
               return (
-                <div key={item.id + index}>
+                <div
+                  key={item.id + index}
+                  onClick={() => props.onChangeCompanyName(item)}
+                >
                   <span> {item.value}</span>
-                  <i className="material-icons-outlined nav__list__item--icon">
-                    done
-                  </i>
+                  {item.value === props.selectCompanies.value ? (
+                    <i className="material-icons-outlined nav__list__item--icon">
+                      done
+                    </i>
+                  ) : null}
                 </div>
               );
             })}
@@ -55,6 +60,18 @@ const DropdownItem = (props) => {
 
 const mapStateToProps = (state) => ({
   companies: state.SelectCompanyReducer.companies,
+  selectCompanies: state.SelectCompanyReducer.selectCompanies,
 });
 
-export default connect(mapStateToProps)(DropdownItem);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onChangeCompanyName: (item) => {
+      dispatch({
+        type: actionTypes.SET_COMPANY,
+        payload: item,
+      });
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(DropdownItem);
