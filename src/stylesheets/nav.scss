@@ -38,6 +38,7 @@
             align-items: center;
             padding: 0 15px 0 15px;
             height: 40px;
+            font-weight: bolder;
             &:hover {
               background-color: $grey-1;
             }
@@ -111,6 +112,10 @@
 
 .selected-company {
   background-color: rgba($brown, 0.2);
+  span,
+  i {
+    color: $brown;
+  }
   &:hover,
   &:focus {
     background-color: rgba($brown, 0.1) !important;
