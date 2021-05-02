@@ -1,3 +1,8 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from "redux";
+import SelectCompanyReducer from "./SelectCompanyReducer";
+import ShowDropdownReducer from "./ShowDropdownReducer";
 
-export default combineReducers({})
+export default combineReducers({
+  SelectCompanyReducer,
+  ShowDropdownReducer,
+});

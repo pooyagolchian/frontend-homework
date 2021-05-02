@@ -4,7 +4,7 @@ const initialState = {
   showDropDown: false,
 };
 
-const showDropDownReducer = (state: any = initialState, action: any) => {
+const ShowDropDownReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionType.SHOW_DROPDOWN:
       return state.showDropDown;
@@ -13,4 +13,4 @@ const showDropDownReducer = (state: any = initialState, action: any) => {
   }
 };
 
-export default showDropDownReducer;
+export default ShowDropDownReducer;

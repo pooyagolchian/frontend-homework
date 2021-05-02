@@ -1,10 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const DropdownItem = () => {
-  const { companies } = this.props;
-
-  const handleSelectCompany = () => {};
+const DropdownItem = (props) => {
+  console.log(props);
   return (
     <div>
       <div className=" nav__list__item nav__list__item--company-divider">
@@ -14,11 +12,17 @@ const DropdownItem = () => {
       <div className="nav__list__item__company">
         <div>
           <div className="nav__list__item__company--wrapper">
-            <div onClick={() => {}}>
-              <span></span>
-              <i className="material-icons-outlined nav__list__item--icon">
-                done
-              </i>
+            <div>
+              {props.companies.map((item, index) => {
+                return (
+                  <div key={item.id + index}>
+                    <span> {item.value}</span>
+                    <i className="material-icons-outlined nav__list__item--icon">
+                      done
+                    </i>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -54,7 +58,7 @@ const DropdownItem = () => {
 };
 
 const mapStateToProps = (state) => ({
-  companies: state.companies,
+  companies: state.SelectCompanyReducer.companies,
 });
 
 export default connect(mapStateToProps)(DropdownItem);

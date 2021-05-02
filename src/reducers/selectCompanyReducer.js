@@ -13,13 +13,13 @@ const initialState = {
   ],
 };
 
-const selectCompanyReducer = (state: any = initialState, action: any) => {
+const SelectCompanyReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionType.SELECT_COMPANY:
-      return state.showDropDown;
+      return state.companies;
     default:
       return state;
   }
 };
 
-export default selectCompanyReducer;
+export default SelectCompanyReducer;
