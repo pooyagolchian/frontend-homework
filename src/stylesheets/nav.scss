@@ -108,3 +108,11 @@
 .color-red {
   color: $red;
 }
+
+.selected-company {
+  background-color: rgba($brown, 0.2);
+  &:hover,
+  &:focus {
+    background-color: rgba($brown, 0.1) !important;
+  }
+}
