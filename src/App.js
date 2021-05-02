@@ -31,7 +31,7 @@ const App = ({ showDropdown, hideDropdown }) => {
     return () => {
       window.removeEventListener("resize", onClick, null);
     };
-  }, []);
+  }, [hideDropdown]);
 
   return (
     <div>
