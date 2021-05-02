@@ -1,10 +1,10 @@
-import * as actionType from "../actions";
+import * as actionType from "../actions/actionTypes";
 
 const initialState = {
   showDropdown: false,
 };
 
-const ShowDropDownReducer = (state = initialState, action) => {
+const showDropDownReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionType.SHOW_DROPDOWN:
       return { ...state, payload: !action.showDropdown };
@@ -13,4 +13,4 @@ const ShowDropDownReducer = (state = initialState, action) => {
   }
 };
 
-export default ShowDropDownReducer;
+export default showDropDownReducer;

@@ -1,77 +1,54 @@
 import React from "react";
-import { connect } from "react-redux";
-import * as actionTypes from "./../../actions";
+import {connect} from "react-redux";
+import DropdownFixItem from "../DropdownFixItem/DropdownFixItem";
+import {dropdownItemAction} from "../../store/actions/dropdownItemAction";
 
 const DropdownItem = (props) => {
-  return (
-    <div className="nav__list">
-      <div className=" nav__list__item nav__list__item--company-divider">
-        Your companies
-      </div>
-      <div className="nav__list__item__company">
-        <div>
-          <div className="nav__list__item__company--wrapper">
-            {props.companies.map((item, index) => {
-              return (
-                <div
-                  key={item.id + index}
-                  onClick={() => props.onChangeCompanyName(item)}
-                >
-                  <span> {item.value}</span>
-                  {item.value === props.selectCompanies.value ? (
-                    <i className="material-icons-outlined nav__list__item--icon">
-                      done
-                    </i>
-                  ) : null}
+    const {onChangeCompanyName, selectCompanies, companies} = props;
+
+    return (
+        <div className="nav__list">
+            <div className="nav__list__item nav__list__item--company-divider">
+                Your companies
+            </div>
+            <div className="nav__list__item__company">
+                <div className="nav__list__item__company--wrapper">
+                    {
+                        companies.map((item) => {
+                            return (
+                                <div
+                                    key={item.id}
+                                    onClick={() => onChangeCompanyName(item)}
+                                >
+                                    <span> {item.value}</span>
+                                    {item.value === selectCompanies.value ? (
+                                        <i className="material-icons-outlined nav__list__item--icon">
+                                            done
+                                        </i>
+                                    ) : null}
+                                </div>
+                            );
+                        })
+                    }
                 </div>
-              );
-            })}
-          </div>
+            </div>
+            <DropdownFixItem icon='phone_iphone' text='Get the mobile app'/>
+            <DropdownFixItem icon='people' text='Community'/>
+            <DropdownFixItem icon='class' text='Knowledge base'/>
+            <div className="nav__list__item--border"></div>
+            <DropdownFixItem icon='settings' text='Settings'/>
+            <DropdownFixItem icon='logout' text='Log out'/>
         </div>
-      </div>
-      <div className="nav__list__item">
-        <i className="material-icons-outlined nav__list__item--icon">
-          phone_iphone
-        </i>
-        Get the mobile app
-      </div>
-      <div className="nav__list__item">
-        <i className="material-icons-outlined nav__list__item--icon">people</i>
-        Community
-      </div>
-      <div className="nav__list__item">
-        <i className="material-icons-outlined nav__list__item--icon">class</i>
-        Knowledge base
-      </div>
-      <div className="nav__list__item--border"></div>
-      <div className="nav__list__item">
-        <i className="material-icons-outlined nav__list__item--icon">
-          settings
-        </i>
-        Settings
-      </div>
-      <div className="nav__list__item color-red">
-        <i className="material-icons-outlined nav__list__item--icon">logout</i>
-        Log out
-      </div>
-    </div>
-  );
+    );
 };
 
 const mapStateToProps = (state) => ({
-  companies: state.SelectCompanyReducer.companies,
-  selectCompanies: state.SelectCompanyReducer.selectCompanies,
+    companies: state.selectCompanyReducer.companies,
+    selectCompanies: state.selectCompanyReducer.selectCompanies,
 });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onChangeCompanyName: (item) => {
-      dispatch({
-        type: actionTypes.SET_COMPANY,
-        payload: item,
-      });
-    },
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+    onChangeCompanyName: (item) => dispatch(dropdownItemAction(item))
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(DropdownItem);

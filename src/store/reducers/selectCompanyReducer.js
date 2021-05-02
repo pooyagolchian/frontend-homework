@@ -1,4 +1,4 @@
-import * as actionType from "../actions";
+import * as actionType from "../actions/actionTypes";
 
 const initialState = {
   companies: [
@@ -16,7 +16,7 @@ const initialState = {
   },
 };
 
-const SelectCompanyReducer = (state = initialState, action) => {
+  const selectCompanyReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionType.SELECT_COMPANY:
       return state.companies;
@@ -28,4 +28,4 @@ const SelectCompanyReducer = (state = initialState, action) => {
   }
 };
 
-export default SelectCompanyReducer;
+export default selectCompanyReducer;
