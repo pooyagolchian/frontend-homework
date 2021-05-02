@@ -1,0 +1,44 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 16px;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  max-width: 280px;
+  padding: 8px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: 100ms background-color;
+
+  &:hover, &:focus {
+    background-color: $grey-2;
+  }
+
+  &:active {
+    background-color: $grey-3;
+  }
+}
+
+.nav__link-text-wrapper {
+  text-align: right;
+}
+
+.nav__link-text {
+  font-weight: bold;
+}
+
+.nav__link-subtext {
+  color: $grey-6;
+}
+
+.nav__link-icon {
+  margin-left: 8px;
+}
