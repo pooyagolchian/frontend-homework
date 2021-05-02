@@ -3,15 +3,10 @@ import { connect } from "react-redux";
 import * as actionTypes from "./../../actions";
 
 const DropdownLink = (props) => {
-  console.log("DropdownLink", props);
+  console.log("DropdownLink", !props.showDropdown);
 
   return (
-    <div
-      className="nav__link"
-      onClick={() => {
-        console.log(!props.showDropdown);
-      }}
-    >
+    <div className="nav__link" onClick={() => {}}>
       <div className="nav__link-text-wrapper">
         <div className="nav__link-text">Elon Musk</div>
         <div className="nav__link-subtext">
@@ -31,10 +26,10 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => {
   return {
-    onShowDropdown: (state) => {
+    onShowDropdown: () => {
       dispatch({
         type: actionTypes.SHOW_DROPDOWN,
-        payload: !state.ShowDropdownReducer.showDropdown,
+        showDropdown: false,
       });
     },
   };
