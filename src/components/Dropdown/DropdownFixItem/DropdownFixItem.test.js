@@ -1,17 +1,16 @@
 import React from "react";
 import DropdownFixItem from "./DropdownFixItem";
 import { shallow } from "enzyme";
-import toJson from "enzyme-to-json";
+import { Provider } from "react-redux";
+import store from "../../../store";
 
-describe("rendering <DropdownFixItem />", () => {
-  it("renders DropdownFixItem component without crashing", () => {
-    shallow(<DropdownFixItem />);
-  });
-});
-
-describe("snapshots", () => {
-  it("DropdownFixItem snapshot", () => {
-    const dropDowmFixItemTree = shallow(<DropdownFixItem />);
-    expect(toJson(dropDowmFixItemTree)).toMatchSnapshot();
+describe("DropdownFixItem", () => {
+  it("snapshot", () => {
+    const DropdownFixItemComponent = shallow(
+      <Provider store={store}>
+        <DropdownFixItem />
+      </Provider>
+    ).dive();
+    expect(DropdownFixItemComponent).toMatchSnapshot();
   });
 });

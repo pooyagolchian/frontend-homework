@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`DropdownFixItem snapshot 1`] = `<DropdownFixItem />`;
+
 exports[`snapshots DropdownFixItem snapshot 1`] = `
 <div
   className="nav__list__item "

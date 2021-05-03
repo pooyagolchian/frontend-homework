@@ -1,10 +1,26 @@
 import React from "react";
 import Company from "./Company";
 import { shallow } from "enzyme";
-import renderer from "react-test-renderer";
+import { Provider } from "react-redux";
+import store from "../../../store";
 
-test("Company snapshot", () => {
-  const component = renderer.create(<Company />);
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+describe("Render Company", () => {
+  it("Renders App component without crashing", () => {
+    const CompanyComponent = shallow(
+      <Provider store={store}>
+        <Company />
+      </Provider>
+    ).dive();
+  });
+});
+
+describe("Company", () => {
+  it("snapshot", () => {
+    const CompanyComponent = shallow(
+      <Provider store={store}>
+        <Company />
+      </Provider>
+    ).dive();
+    expect(CompanyComponent).toMatchSnapshot();
+  });
 });
