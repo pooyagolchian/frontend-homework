@@ -6,15 +6,12 @@ import store from "../../../store"
 
 describe("Render Company", () => {
   it("Renders App component without crashing", () => {
-    const CompanyComponent = shallow(
+    shallow(
       <Provider store={store}>
         <Company />
       </Provider>
     ).dive()
   })
-})
-
-describe("Company", () => {
   it("snapshot", () => {
     const CompanyComponent = shallow(
       <Provider store={store}>

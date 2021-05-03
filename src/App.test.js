@@ -5,15 +5,15 @@ import { Provider } from "react-redux"
 import store from "./store"
 
 describe("rendering components", () => {
-  const AppComponent = shallow(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  ).dive()
-  expect(AppComponent)
-})
+  it("Renders App component without crashing", () => {
+    const AppComponent = shallow(
+      <Provider store={store}>
+        <App />
+      </Provider>
+    ).dive()
+    expect(AppComponent)
+  })
 
-describe("App", () => {
   it("snapshot", () => {
     const AppComponent = shallow(
       <Provider store={store}>
@@ -23,3 +23,5 @@ describe("App", () => {
     expect(AppComponent).toMatchSnapshot()
   })
 })
+
+describe("App", () => {})

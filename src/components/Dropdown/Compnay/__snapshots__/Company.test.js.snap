@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Company snapshot 1`] = `<Connect(Company) />`;
+
+exports[`Render Company snapshot 1`] = `<Connect(Company) />`;
