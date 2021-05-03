@@ -20,7 +20,6 @@ const App = ({ showDropdown, hideDropdown }) => {
     }
     return true;
   };
-
   useEffect(() => {
     const onClick = (mouseEvent) => {
       if (checkIfOutside(mouseEvent)) {
@@ -32,7 +31,6 @@ const App = ({ showDropdown, hideDropdown }) => {
       window.removeEventListener("resize", onClick, null);
     };
   }, [hideDropdown]);
-
   return (
     <div>
       <nav className="nav">

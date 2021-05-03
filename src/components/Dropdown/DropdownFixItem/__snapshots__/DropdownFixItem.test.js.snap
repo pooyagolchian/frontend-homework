@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshots DropdownFixItem snapshot 1`] = `
+<div
+  className="nav__list__item "
+>
+  <i
+    className="material-icons-outlined nav__list__item--icon"
+  />
+</div>
+`;

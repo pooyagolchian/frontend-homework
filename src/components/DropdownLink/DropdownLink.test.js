@@ -1,8 +1,10 @@
-import { shallow } from "enzyme";
+import React from "react";
 import DropdownLink from "./DropdownLink";
+import { shallow } from "enzyme";
 
-describe("<DropdownLink />", () => {
-  it("renders link", () => {
-    expect(shallow(<DropdownLink />)).toMatchSnapshot();
+describe("snapshots", () => {
+  it("DropdownLink snapshot", () => {
+    const DropdownLinkTree = shallow(<DropdownLink />).dive();
+    expect(toJson(DropdownLinkTree)).toMatchSnapshot();
   });
 });
