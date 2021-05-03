@@ -1,6 +1,7 @@
 import React from "react"
 import DropdownLink from "./DropdownLink"
-import { shallow, mount } from "enzyme"
+import { shallow } from "enzyme"
+import sinon from "sinon"
 import store from "../../store"
 import { Provider } from "react-redux"
 
