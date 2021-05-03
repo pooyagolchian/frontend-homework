@@ -7,4 +7,4 @@ export const companies = [
     id: 2,
     value: "Tartu Agro OÜ",
   },
-];
+]

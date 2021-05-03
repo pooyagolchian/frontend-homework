@@ -1,8 +1,8 @@
-import React from "react";
-import DropdownFixItem from "./DropdownFixItem";
-import { shallow } from "enzyme";
-import { Provider } from "react-redux";
-import store from "../../../store";
+import React from "react"
+import DropdownFixItem from "./DropdownFixItem"
+import { shallow } from "enzyme"
+import { Provider } from "react-redux"
+import store from "../../../store"
 
 describe("DropdownFixItem", () => {
   it("snapshot", () => {
@@ -10,7 +10,7 @@ describe("DropdownFixItem", () => {
       <Provider store={store}>
         <DropdownFixItem />
       </Provider>
-    ).dive();
-    expect(DropdownFixItemComponent).toMatchSnapshot();
-  });
-});
+    ).dive()
+    expect(DropdownFixItemComponent).toMatchSnapshot()
+  })
+})

@@ -1,18 +1,13 @@
-import React from "react";
-import { selectCompanyAction } from "../../../store/actions/selectCompanyAction";
-import { connect } from "react-redux";
-import { toggleDropdownAction } from "../../../store/actions/toggleDropdownAction";
+import React from "react"
+import { selectCompanyAction } from "../../../store/actions/selectCompanyAction"
+import { connect } from "react-redux"
+import { toggleDropdownAction } from "../../../store/actions/toggleDropdownAction"
 
-const Company = ({
-  onCompanyChange,
-  selectedCompany,
-  company,
-  hideDropdown,
-}) => {
+const Company = ({ onCompanyChange, selectedCompany, company, hideDropdown }) => {
   const onCompanyChanged = () => {
-    onCompanyChange(company);
-    hideDropdown();
-  };
+    onCompanyChange(company)
+    hideDropdown()
+  }
 
   return (
     <>
@@ -28,16 +23,16 @@ const Company = ({
         )}
       </div>
     </>
-  );
-};
+  )
+}
 
 const mapStateToProps = (state) => ({
   selectedCompany: state.company.selectedCompany,
-});
+})
 
 const mapDispatchToProps = (dispatch) => ({
   onCompanyChange: (item) => dispatch(selectCompanyAction(item)),
   hideDropdown: () => dispatch(toggleDropdownAction(false)),
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Company);
+export default connect(mapStateToProps, mapDispatchToProps)(Company)

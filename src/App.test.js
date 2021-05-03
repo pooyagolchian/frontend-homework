@@ -1,17 +1,17 @@
-import React from "react";
-import App from "./App";
-import { shallow } from "enzyme";
-import { Provider } from "react-redux";
-import store from "./store";
+import React from "react"
+import App from "./App"
+import { shallow } from "enzyme"
+import { Provider } from "react-redux"
+import store from "./store"
 
 describe("rendering components", () => {
   const AppComponent = shallow(
     <Provider store={store}>
       <App />
     </Provider>
-  ).dive();
-  expect(AppComponent);
-});
+  ).dive()
+  expect(AppComponent)
+})
 
 describe("App", () => {
   it("snapshot", () => {
@@ -19,7 +19,7 @@ describe("App", () => {
       <Provider store={store}>
         <App />
       </Provider>
-    ).dive();
-    expect(AppComponent).toMatchSnapshot();
-  });
-});
+    ).dive()
+    expect(AppComponent).toMatchSnapshot()
+  })
+})

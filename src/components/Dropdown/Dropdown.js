@@ -1,7 +1,7 @@
-import React from "react";
-import { connect } from "react-redux";
-import DropdownFixItem from "./DropdownFixItem/DropdownFixItem";
-import Company from "./Compnay/Company";
+import React from "react"
+import { connect } from "react-redux"
+import DropdownFixItem from "./DropdownFixItem/DropdownFixItem"
+import Company from "./Compnay/Company"
 
 const Dropdown = ({ companies }) => {
   return (
@@ -23,11 +23,11 @@ const Dropdown = ({ companies }) => {
       <DropdownFixItem icon="settings" text="Settings" />
       <DropdownFixItem icon="logout" text="Log out" />
     </div>
-  );
-};
+  )
+}
 
 const mapStateToProps = (state) => ({
   companies: state.company.companies,
-});
+})
 
-export default connect(mapStateToProps)(Dropdown);
+export default connect(mapStateToProps)(Dropdown)

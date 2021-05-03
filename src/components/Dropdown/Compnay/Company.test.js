@@ -1,8 +1,8 @@
-import React from "react";
-import Company from "./Company";
-import { shallow } from "enzyme";
-import { Provider } from "react-redux";
-import store from "../../../store";
+import React from "react"
+import Company from "./Company"
+import { shallow } from "enzyme"
+import { Provider } from "react-redux"
+import store from "../../../store"
 
 describe("Render Company", () => {
   it("Renders App component without crashing", () => {
@@ -10,9 +10,9 @@ describe("Render Company", () => {
       <Provider store={store}>
         <Company />
       </Provider>
-    ).dive();
-  });
-});
+    ).dive()
+  })
+})
 
 describe("Company", () => {
   it("snapshot", () => {
@@ -20,7 +20,7 @@ describe("Company", () => {
       <Provider store={store}>
         <Company />
       </Provider>
-    ).dive();
-    expect(CompanyComponent).toMatchSnapshot();
-  });
-});
+    ).dive()
+    expect(CompanyComponent).toMatchSnapshot()
+  })
+})
