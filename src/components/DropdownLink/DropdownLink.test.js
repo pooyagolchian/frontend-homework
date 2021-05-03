@@ -1,6 +1,6 @@
 import React from "react";
 import DropdownLink from "./DropdownLink";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import store from "../../store";
 import { Provider } from "react-redux";
 
