@@ -10,19 +10,15 @@ const Company = ({ onCompanyChange, selectedCompany, company, hideDropdown }) =>
   }
 
   return (
-    <>
-      <div
-        className={
-          company.value === selectedCompany.value ? "selected-company" : null
-        }
-        onClick={() => onCompanyChanged()}
-      >
-        <span> {company.value}</span>
-        {company.value === selectedCompany.value && (
-          <i className="material-icons-outlined nav__list__item--icon">done</i>
-        )}
-      </div>
-    </>
+    <div
+      className={company.value === selectedCompany.value ? "selected-company" : null}
+      onClick={() => onCompanyChanged()}
+    >
+      <span> {company.value}</span>
+      {company.value === selectedCompany.value && (
+        <i className="material-icons-outlined nav__list__item--icon">done</i>
+      )}
+    </div>
   )
 }
 
