@@ -43,7 +43,14 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 This project developed for e-agronom for frontend homework.
 
+- Using Redux for state management.
+- Using Prettier, Husky.
+- Using react hook to control the general state in the application.
+- Using Jest and Enzym and well tested with Snapshop, Unit-test, and integrated test.
+
 ![e-agronom](e-agronom.gif)
+
+- You can see [demo site](https://eagronom.netlify.app/)
 
 ### BEM
 
