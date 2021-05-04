@@ -39,6 +39,8 @@ The page will reload if you make edits.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+---
+
 # Code scaffolding
 
 This project developed for e-agronom for frontend homework.
