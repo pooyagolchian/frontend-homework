@@ -52,7 +52,7 @@ This project developed for e-agronom for frontend homework.
 
 ![e-agronom](e-agronom.gif)
 
-- You can see [demo site](https://eagronom.netlify.app/)
+- You can see [demo](https://eagronom.netlify.app/)
 
 ### BEM
 
