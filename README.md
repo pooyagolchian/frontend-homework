@@ -38,3 +38,30 @@ The page will reload if you make edits.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+# Code scaffolding
+
+This project developed for e-agronom for frontend homework.
+
+![e-agronom](e-agronom.gif)
+
+### BEM
+
+I use BEM methodology with SCSS format to create reusable components for this task. I follow the structure developed in the dummy files.
+
+### Husky
+
+I use Husky for git hook pre-commit to format all code with Prettier.
+
+### Prettier
+
+Using [Prettier](https://prettier.io/) for opinionated code formatter.
+It will take care of formatting for you.
+Prettier creates an abstract syntax tree from your code and uses it to write new code formatted according to a set of rules.
+In addition, I check pretty before every commit by add a pre-commit hook. For more detail check package.json, husky section.
+
+### SOLID
+
+Regarding the `S` for `SOLID` I just tried to keep each function(component as a funstion as well) to
+just responsible for a single task. That's why I just created a separate component for every part
+and also keep it simple stupid.

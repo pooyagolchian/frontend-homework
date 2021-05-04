@@ -34,7 +34,6 @@ describe("Company", () => {
       </Provider>
     )
     const companyName = CompanyComponent.find("span")
-
     expect(companyName.text()).toContain("mock-name")
   })
 
@@ -58,7 +57,6 @@ describe("Company", () => {
       </Provider>
     )
     const icon = CompanyComponent.find("i")
-
     expect(icon.exists()).toEqual(true)
   })
 
