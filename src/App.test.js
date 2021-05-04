@@ -1,6 +1,6 @@
 import React from "react"
 import App from "./App"
-import { shallow } from "enzyme"
+import { shallow, mount } from "enzyme"
 import { Provider } from "react-redux"
 import store from "./store"
 
